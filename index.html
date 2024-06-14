@@ -1,11 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posttest KBD 2024</title>
-</head>
-<body>
-    <h1>Hallo Dunia</h1>
-</body>
+    <style>
+      /* Dark mode theme */
+      * {
+        user-select: none;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+      }
+
+      body {
+        background-color: #1d1d1d;
+        color: #f1f1f1;
+        font-family: Arial, sans-serif;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: #2b2b2b;
+        color: #f1f1f1;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #3b3b3b;
+      }
+
+      th {
+        background-color: #3b3b3b;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #9e9e9e;
+      }
+
+      code {
+        background-color: #3b3b3b;
+        color: #f1f1f1;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+
+      pre {
+        background-color: #3b3b3b;
+        color: #f1f1f1;
+        padding: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 id="soal-1">Soal 1</h1>
+      <p>Table: Customers</p>
+      <pre><code>+-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
++-------------+---------+
+</code></pre>
+      <p>
+        id adalah primary key untuk tabel ini.<br />Setiap baris dari tabel ini
+        menunjukkan ID dan nama dari seorang pelanggan.
+      </p>
+      <p>Table: Orders</p>
+      <pre><code>+-------------+------+
+| Column Name | Type |
++-------------+------+
+| id          | int  |
+| customerId  | int  |
++-------------+------+
+</code></pre>
+      <p>
+        id adalah primary key untuk tabel ini.<br />customerId adalah foreign
+        key dari ID pada tabel Customers.<br />Setiap baris dari tabel ini
+        menunjukkan ID dari sebuah pesanan dan ID dari pelanggan yang
+        memesannya.
+      </p>
+      <p>
+        Tulis solusi untuk menemukan semua pelanggan yang tidak pernah memesan
+        apa pun.
+      </p>
+      <p>Kembalikan tabel hasil dalam urutan apa pun.</p>
+      <p>Berikut contoh masukkan dan keluaran.</p>
+      <h3 id="input">Input:</h3>
+      <p>Customers table:</p>
+      <pre><code>+----+-------+
+| id | name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+</code></pre>
+      <p>Orders table:</p>
+      <pre><code>+----+------------+
+| id | customerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+</code></pre>
+      <h3 id="output">Output:</h3>
+      <pre><code>+-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+</code></pre>
+      <h1 id="soal-2">Soal 2</h1>
+      <p>Table: World</p>
+      <pre><code>+-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| name        | varchar |
+| continent   | varchar |
+| area        | int     |
+| population  | int     |
+| gdp         | bigint  |
++-------------+---------+
+</code></pre>
+      <p>
+        name adalah primary key untuk tabel ini.<br />Setiap baris dari tabel
+        ini memberikan informasi tentang nama negara, benua di mana negara
+        tersebut berada, luas wilayahnya, populasi, dan nilai PDB-nya.
+      </p>
+      <p>Sebuah negara dianggap besar jika:</p>
+      <ul>
+        <li>memiliki luas area paling tidak tiga juta (3.000.000 km²),</li>
+        <li>
+          atau memiliki populasi paling tidak dua puluh lima juta (25.000.000).
+        </li>
+      </ul>
+      <p>
+        Tulislah sebuah solusi untuk menemukan nama, populasi, dan area dari
+        negara-negara besar.
+      </p>
+      <p>Kembalikan tabel hasil dalam urutan apa pun.</p>
+      <p>Berikut contoh masukkan dan keluaran.</p>
+      <h3 id="input-1">Input:</h3>
+      <p>World table:</p>
+      <pre><code>+-------------+-----------+---------+------------+--------------+
+| name        | continent | area    | population | gdp          |
++-------------+-----------+---------+------------+--------------+
+| Afghanistan | Asia      | 652230  | 25500100   | 20343000000  |
+| Albania     | Europe    | 28748   | 2831741    | 12960000000  |
+| Algeria     | Africa    | 2381741 | 37100000   | 188681000000 |
+| Andorra     | Europe    | 468     | 78115      | 3712000000   |
+| Angola      | Africa    | 1246700 | 20609294   | 100990000000 |
++-------------+-----------+---------+------------+--------------+
+</code></pre>
+      <h3 id="output-1">Output:</h3>
+      <pre><code>+-------------+------------+---------+
+| name        | population | area    |
++-------------+------------+---------+
+| Afghanistan | 25500100   | 652230  |
+| Algeria     | 37100000   | 2381741 |
++-------------+------------+---------+
+</code></pre>
+      <h1 id="soal-3">Soal 3</h1>
+      <p>Table: Employee</p>
+      <pre><code>+-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| empId       | int     |
+| name        | varchar |
+| supervisor  | int     |
+| salary      | int     |
++-------------+---------+
+</code></pre>
+      <p>
+        empId adalah primary key untuk tabel ini.<br />Setiap baris dari tabel
+        ini menunjukkan nama dan ID seorang karyawan, gaji mereka, dan ID dari
+        manajer mereka.
+      </p>
+      <p>Table: Bonus</p>
+      <pre><code>+-------------+------+
+| Column Name | Type |
++-------------+------+
+| empId       | int  |
+| bonus       | int  |
++-------------+------+
+</code></pre>
+      <p>
+        empId adalah primary key untuk tabel ini.<br />empId juga adalah foreign
+        key ke empId dari tabel Employee.<br />Setiap baris dari tabel ini
+        berisi ID seorang karyawan dan bonus masing-masing.
+      </p>
+      <p>
+        Tulislah sebuah solusi untuk melaporkan nama dan jumlah bonus dari
+        setiap karyawan dengan bonus kurang dari 1000.
+      </p>
+      <p>Kembalikan tabel hasil dalam urutan apa pun.</p>
+      <p>Berikut contoh masukkan dan keluaran.</p>
+      <h3 id="input-2">Input:</h3>
+      <p>Employee table:</p>
+      <pre><code>+-------+--------+------------+--------+
+| empId | name   | supervisor | salary |
++-------+--------+------------+--------+
+| 3     | Brad   | null       | 4000   |
+| 1     | John   | 3          | 1000   |
+| 2     | Dan    | 3          | 2000   |
+| 4     | Thomas | 3          | 4000   |
++-------+--------+------------+--------+
+</code></pre>
+      <p>Bonus table:</p>
+      <pre><code>+-------+-------+
+| empId | bonus |
++-------+-------+
+| 2     | 500   |
+| 4     | 2000  |
++-------+-------+
+</code></pre>
+      <h3 id="output-2">Output:</h3>
+      <pre><code>+------+-------+
+| name | bonus |
++------+-------+
+| Brad | null  |
+| John | null  |
+| Dan  | 500   |
++------+-------+
+</code></pre>
+      <p>
+        Penjelasan:<br />Hanya Brad, John, dan Dan yang memiliki bonus kurang
+        dari 1000
+      </p>
+      <h1 id="soal-4">Soal 4</h1>
+      <p>Table: Sales</p>
+      <pre><code>+-------------+-------+
+| Column Name | Type  |
++-------------+-------+
+| sale_id     | int   |
+| product_id  | int   |
+| year        | int   |
+| quantity    | int   |
+| price       | int   |
++-------------+-------+
+</code></pre>
+      <p>
+        (sale_id, year) adalah primary key dari tabel ini.<br />product_id
+        adalah foreign key ke tabel Product. Setiap baris dari tabel ini
+        menunjukkan penjualan pada produk product_id di tahun tertentu.<br />Perhatikan
+        bahwa harga adalah per unit.
+      </p>
+      <p>Table: Product</p>
+      <pre><code>+--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| product_id   | int     |
+| product_name | varchar |
++--------------+---------+
+</code></pre>
+      <p>
+        product_id adalah primary key dari tabel ini.<br />Setiap baris dari
+        tabel ini menunjukkan nama produk dari setiap produk.
+      </p>
+      <p>
+        Tulis solusi untuk melaporkan product_name, year, dan price untuk setiap
+        sale_id di tabel Sales.
+      </p>
+      <p>Kembalikan tabel hasil dalam urutan apa pun.</p>
+      <p>Berikut contoh masukkan dan keluaran.</p>
+      <h3 id="input-3">Input:</h3>
+      <p>Sales table:</p>
+      <pre><code>+---------+------------+------+----------+-------+
+| sale_id | product_id | year | quantity | price |
++---------+------------+------+----------+-------+
+| 1       | 100        | 2008 | 10       | 5000  |
+| 2       | 100        | 2009 | 12       | 5000  |
+| 7       | 200        | 2011 | 15       | 9000  |
++---------+------------+------+----------+-------+
+</code></pre>
+      <p>Product table:</p>
+      <pre><code>+------------+--------------+
+| product_id | product_name |
++------------+--------------+
+| 100        | Nokia        |
+| 200        | Apple        |
+| 300        | Samsung      |
++------------+--------------+
+</code></pre>
+      <h3 id="output-3">Output:</h3>
+      <pre><code>+--------------+-------+-------+
+| product_name | year  | price |
++--------------+-------+-------+
+| Nokia        | 2008  | 5000  |
+| Nokia        | 2009  | 5000  |
+| Apple        | 2011  | 9000  |
++--------------+-------+-------+
+</code></pre>
+      <p>
+        Penjelasan:<br />Dari sale_id = 1, kita bisa menyimpulkan bahwa Nokia
+        dijual seharga 5000 pada tahun 2008.<br />Dari sale_id = 2, kita bisa
+        menyimpulkan bahwa Nokia dijual seharga 5000 pada tahun 2009.<br />Dari
+        sale_id = 7, kita bisa menyimpulkan bahwa Apple dijual seharga 9000 pada
+        tahun 2011.
+      </p>
+      <h1 id="soal-5">Soal 5</h1>
+      <p>Table: Destination_Visits</p>
+      <pre><code>+--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| visit_id     | int     |
+| name         | varchar |
+| visit_date   | date    |
++--------------+---------+
+</code></pre>
+      <p>
+        (visit_id) adalah primary key yang menandakan setiap kunjungan ke
+        destinasi tersebut.<br />name adalah nama dari tempat destinasi.
+        visit_date adalah tanggal kunjungan ke tempat destinasi.
+      </p>
+      <p>
+        Tulis solusi untuk menampilkan top 3 nama tempat yang paling banyak
+        dikunjungi berdasarkan jumlah kunjungan.
+      </p>
+      <p>Berikut adalah contoh masukkan dan keluaran.</p>
+      <h3 id="input-4">Input:</h3>
+      <p>Destination_Visits table:</p>
+      <pre><code>+----------+---------------------+------------+
+| visit_id | name                | visit_date |
++----------+---------------------+------------+
+| 1        | Eiffel Tower        | 2023-01-01 |
+| 2        | Great Wall          | 2023-01-02 |
+| 3        | Eiffel Tower        | 2023-01-03 |
+| 4        | Statue of Liberty   | 2023-01-04 |
+| 5        | Colosseum           | 2023-01-05 |
+| 6        | Eiffel Tower        | 2023-01-06 |
+| 7        | Great Wall          | 2023-01-07 |
+| 8        | Great Wall          | 2023-01-08 |
+| 9        | Statue of Liberty   | 2023-01-09 |
+| 10       | Eiffel Tower        | 2023-01-10 |
+| 11       | Colosseum           | 2023-01-11 |
+| 12       | Machu Picchu        | 2023-01-12 |
++----------+---------------------+------------+
+</code></pre>
+      <h3 id="output-4">Output:</h3>
+      <pre><code>+---------------------+--------------+
+| name                | visit_count  |
++---------------------+--------------+
+| Eiffel Tower        | 4            |
+| Great Wall          | 3            |
+| Colosseum           | 2            |
++---------------------+--------------+
+</code></pre>
+      <h2 id="cara-menjawab">Cara Menjawab</h2>
+      <h4 id="waktu-pengerjaan-90-menit-15-menit-terakhir-pengumpulan">
+        Waktu pengerjaan: 90 menit
+      </h4>
+      <p>
+        Praktikan dapat menggunakan code editor VSCode atau sejenisnya untuk
+        membuat query solusi jawaban setiap soal. Berikut merupakan contoh
+        format query solusi jawaban
+      </p>
+      <pre><code class="language-sql">-- Soal 1
+SELECT * FROM Solution
+
+-- Soal 2
+-- Query Solusi
+
+-- Dan Seterusnya...
+</code></pre>
+      <p>
+        Setelah itu file disimpan dalam bentuk .sql dan diupload di link google
+        form
+        <a
+          style="color: aqua"
+          target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfGYV8CIADQQTwtSop_DJpMHTgopzHewEhkM-2-3z7_XKwV3A/viewform"
+          >berikut</a
+        >
+      </p>
+
+      <h4 id="good-luck-">Good Luck :)</h4>
+    </div>
+  </body>
 </html>
